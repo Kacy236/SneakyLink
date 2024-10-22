@@ -1,0 +1,132 @@
+.v-wrapper {
+  background: linear-gradient(135deg, #f9f9f9 30%, #e2e2e2 100%); /* Gradient background */
+  padding: 50px 0;
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.v-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left Side */
+.v-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  max-width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 3D effect on image */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateZ(10px); /* Lift effect on hover */
+}
+
+.v-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Accordion Styles */
+.accordion {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.accordionItem {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.accordionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+}
+
+.accordionButton:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+  transform: translateY(-2px) scale(1.02); /* Slight lift and scale */
+}
+
+/* Expanded Accordion Styles */
+.accordionItem.expanded {
+  border: 1px solid #e74c3c; /* Highlight expanded item */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow when expanded */
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 3D shadow effect */
+  transition: transform 0.3s ease;
+}
+
+.testimonials:hover {
+  transform: translateZ(10px); /* Lift effect on hover */
+}
+
+.testimonialsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.testimonialText {
+  font-style: italic;
+  margin: 5px 0;
+}
+
+/* Additional Styles for Icons */
+.icon {
+  margin-right: 10px;
+}
+
+/* Entrance Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the entrance animation */
+.v-left, .v-right, .accordionItem, .testimonials {
+  animation: slideIn 0.5s forwards; /* Apply entrance animation */
+}
+
+/* Apply a delay for different elements */
+.v-left {
+  animation-delay: 0.1s;
+}
+
+.v-right {
+  animation-delay: 0.2s;
+}
+
+.accordionItem {
+  animation-delay: 0.3s;
+}
+
+.testimonials {
+  animation-delay: 0.4s;
+}

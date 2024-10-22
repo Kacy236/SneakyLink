@@ -1,0 +1,54 @@
+.innovation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: #f8f8f8;
+  background-image: url('https://your-background-url.com'); /* URL of the icon background pattern */
+  background-size: cover;
+}
+
+.innovation-content {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.car-image img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.text-content {
+  margin-left: 40px;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  margin-right: 10px;
+}
+
+h2 {
+  font-size: 36px;
+  color: #333;
+  font-weight: 700;
+  margin: 0;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.6;
+}
