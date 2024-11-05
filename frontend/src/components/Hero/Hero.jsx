@@ -1,77 +1,122 @@
-import "./Hero.css";
-import CountUp from "react-countup";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
 import SearchBar from "../SearchBar/SearchBar";
-const Hero = () => {
+import "./Hero.css";
+import { BsHeartFill, BsFillChatDotsFill, BsPersonFill } from 'react-icons/bs';
+
+const HeroContainer = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255, 183, 197, 1) 0%, rgba(255, 118, 137, 1) 100%);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+`;
+<SearchBar/>
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+const IconFloat = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+`;
+
+const Title = styled.h1`
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  animation: ${fadeIn} 1.5s ease forwards;
+  color: #ffe0e9;
+  text-shadow: 0px 4px 10px rgba(255, 94, 129, 0.7);
+  font-family: 'Lobster', cursive;
+`;
+
+const Subtitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  animation: ${fadeIn} 2s ease forwards;
+  color: #fff5f8;
+  text-shadow: 0px 2px 5px rgba(255, 118, 137, 0.5);
+  font-family: 'Poppins', sans-serif;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: ${fadeIn} 2s ease forwards;
+`;
+
+const Icon = styled.div`
+  font-size: 3rem;
+  color: #ffb3c6;
+  animation: ${IconFloat} 3s infinite ease-in-out;
+  filter: drop-shadow(0px 4px 6px rgba(255, 94, 129, 0.5));
+
+  &:nth-child(2) { animation-delay: 0.5s; }
+  &:nth-child(3) { animation-delay: 1s; }
+`;
+
+const Button = styled.button`
+  background-color: #ff5e81;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(255, 94, 129, 0.6);
+    background-color: #ff3a61;
+  }
+`;
+
+const AnimatedText = styled.span`
+  display: inline-block;
+  animation: ${fadeIn} 2s ease forwards;
+`;
+
+const HeroSection = () => {
+  const [textIndex, setTextIndex] = useState(0);
+  const phrases = ["Find Your Match", "Have the best night of your life", "Explore sexual possibilities"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="hero-wrapper">
-      <div className="paddings innerWidth flexCenter hero-container">
-        {/* left side */}
-        <div className="flexColStart hero-left">
-          <div className="hero-title">
-            <div className="orange-circle" />
-            <motion.h1
-            initial={{ y: "2rem", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
-            >
-              Discover <br />
-              Most Suitable
-              <br /> Property
-            </motion.h1>
-          </div>
-          <div className="flexColStart secondaryText flexhero-des">
-            <span>Find a variety of properties that suit you very easilty</span>
-            <span>Forget all difficulties in finding a residence for you</span>
-          </div>
-
-          <SearchBar/>
-
-
-          <div className="flexCenter stats">
-            <div className="flexColCenter stat">
-              <span>
-                <CountUp start={8800} end={9000} duration={4} /> <span>+</span>
-              </span>
-              <span className="secondaryText">Premium Product</span>
-            </div>
-
-            <div className="flexColCenter stat">
-              <span>
-                <CountUp start={1950} end={2000} duration={4} /> <span>+</span>
-              </span>
-              <span className="secondaryText">Happy Customer</span>
-            </div>
-
-            <div className="flexColCenter stat">
-              <span>
-                <CountUp end={28} /> <span>+</span>
-              </span>
-              <span className="secondaryText">Awards Winning</span>
-            </div>
-          </div>
-        </div>
-
-        {/* right side */}
-        <div className="flexCenter hero-right">
-          <motion.div
-            initial={{ x: "7rem", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
-            className="image-container"
-          >
-            <img src="./hero-image.png" alt="houses" />
-          </motion.div>
-        </div>
-      </div>
-    </section>
+    <HeroContainer>
+      <Title><AnimatedText>{phrases[textIndex]}</AnimatedText></Title>
+      <Subtitle>Welcome to the beginning of something beautiful</Subtitle>
+      <IconContainer>
+        <Icon><BsHeartFill /></Icon>
+        <Icon><BsFillChatDotsFill /></Icon>
+        <Icon><BsPersonFill /></Icon>
+      </IconContainer>
+      <Button>Join Now</Button>
+    </HeroContainer>
   );
 };
 
-export default Hero;
+export default HeroSection;
+
+

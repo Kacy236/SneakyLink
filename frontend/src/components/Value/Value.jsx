@@ -8,7 +8,9 @@ import {
   AccordionItemState,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
-import { MdOutlineArrowDropDown } from "react-icons/md";
+import {
+  MdOutlineArrowDropDown,
+} from "react-icons/md";
 import data from "../../utils/accordion.jsx";
 import "./Value.css";
 
@@ -35,27 +37,36 @@ const Value = () => {
             We believe a good place to live can make your life better.
           </span>
 
-          <Accordion className="accordion" allowMultipleExpanded={false} preExpanded={[0]}>
+          <Accordion
+            className="accordion"
+            allowMultipleExpanded={false}
+            preExpanded={[0]}
+          >
             {data.map((item, i) => {
-              const [className, setClassName] = useState(null);
               return (
-                <AccordionItem className={`accordionItem ${className}`} uuid={i} key={i}>
+                <AccordionItem
+                  className="accordionItem"
+                  uuid={i}
+                  key={i}
+                >
                   <AccordionItemHeading>
                     <AccordionItemButton className="flexCenter accordionButton">
-                      {/* Just for getting state of item */}
                       <AccordionItemState>
-                        {({ expanded }) => {
-                          setClassName(expanded ? "expanded" : "collapsed");
-                          return (
-                            <>
-                              <div className="flexCenter icon">{item.icon}</div>
-                              <span className="primaryText">{item.heading}</span>
-                              <div className="flexCenter icon">
-                                <MdOutlineArrowDropDown size={20} />
-                              </div>
-                            </>
-                          );
-                        }}
+                        {({ expanded }) => (
+                          <>
+                            <div
+                              className={`flexCenter icon ${expanded ? 'expanded' : 'collapsed'}`}
+                            >
+                              {item.icon}
+                            </div>
+                            <span className="primaryText">
+                              {item.heading}
+                            </span>
+                            <div className="flexCenter icon">
+                              <MdOutlineArrowDropDown size={20} />
+                            </div>
+                          </>
+                        )}
                       </AccordionItemState>
                     </AccordionItemButton>
                   </AccordionItemHeading>
@@ -66,21 +77,6 @@ const Value = () => {
               );
             })}
           </Accordion>
-
-          {/* Testimonials Section */}
-          <div className="testimonials">
-            <h3 className="testimonialsTitle">What Our Clients Say</h3>
-            <p className="testimonialText">
-              "This service transformed my life. I found my dream home quickly!"
-              <br />
-              - Jane D.
-            </p>
-            <p className="testimonialText">
-              "Exceptional service and support throughout the entire process!"
-              <br />
-              - John S.
-            </p>
-          </div>
         </div>
       </div>
     </section>

@@ -1,82 +1,69 @@
 import asyncHandler from "express-async-handler";
-import { prisma } from '../config/prismaConfig.js';
 
-// Create a new residency
+import { prisma } from "../config/prismaConfig.js";
+
 export const createResidency = asyncHandler(async (req, res) => {
-    // Destructure data directly from req.body (no .data)
-    const { title, description, price, address, country, city, facilities, image, userEmail } = req.body;
+  const {
+    title,
+    description,
+    price,
+    address,
+    country,
+    city,
+    facilities,
+    image,
+    userEmail,
+  } = req.body;
 
-    try {
-        // Create residency in the database
-        const residency = await prisma.residency.create({
-            data: {
-                title, 
-                description, 
-                price, 
-                address, 
-                country, 
-                city, 
-                facilities, 
-                image,
-                owner: { connect: { email: userEmail } }, // Connect to user via email
-            },
-        });
+  if(!userEmail){
+    res.send({ message: "Email missing" });
+  }
 
-        // Send success response
-        res.status(201).json({ message: "Residency created successfully", residency });
+  console.log(req.body.data);
+  try {
+    const residency = await prisma.residency.create({
+      data: {
+        title,
+        description,
+        price,
+        address,
+        country,
+        city,
+        facilities,
+        image,
+        owner: { connect: { email: userEmail } },
+      },
+    });
 
-    } catch (err) {
-        // Handle Prisma unique constraint error (address conflict)
-        if (err.code === "P2002") {
-            return res.status(400).json({ message: "A residency with this address already exists" });
-        }
-        // Log error and send server error response
-        console.error("Error creating residency:", err);
-        res.status(500).json({ message: err.message });
+    res.send({ message: "Residency created successfully", residency });
+  } catch (err) {
+    if (err.code === "P2002") {
+      throw new Error("A residency with address already there");
     }
+    throw new Error(err.message);
+  }
 });
 
-// Get all residencies
+// function to get all the documents/residencies
 export const getAllResidencies = asyncHandler(async (req, res) => {
-    try {
-        // Fetch all residencies ordered by creation date
-        const residencies = await prisma.residency.findMany({
-            orderBy: {
-                createdAt: "desc",
-            },
-        });
-
-        // Send the residencies as a response
-        res.status(200).json(residencies);
-
-    } catch (err) {
-        // Log error and send server error response
-        console.error("Error fetching residencies:", err);
-        res.status(500).json({ message: "Error fetching residencies" });
-    }
+  const residencies = await prisma.residency.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  res.send(residencies);
 });
 
-// Get a specific residency by ID
+// function to get a specific document/residency
 export const getResidency = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    try {
-        // Find residency by ID
-        const residency = await prisma.residency.findUnique({
-            where: { id },
-        });
-
-        // Handle case where no residency is found
-        if (!residency) {
-            return res.status(404).json({ message: "Residency not found" });
-        }
-
-        // Send the found residency as a response
-        res.status(200).json(residency);
-
-    } catch (err) {
-        // Log error and send server error response
-        console.error("Error fetching residency:", err);
-        res.status(500).json({ message: err.message });
-    }
+  try {
+    const residency = await prisma.residency.findUnique({
+      where: { id },
+    });
+    res.send(residency);
+  } catch (err) {
+    throw new Error(err.message);
+  }
 });

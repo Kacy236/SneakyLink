@@ -1,45 +1,59 @@
+.r-wrapper {
+  background: linear-gradient(135deg, rgba(64, 102, 255, 0.1), rgba(255, 150, 150, 0.1));
+  padding: 4rem 0; /* Padding for top and bottom */
+}
+
 .r-container {
-  gap: 2rem;
-  position: relative;
-  overflow: hidden;
+  max-width: 1200px; /* Maximum width for the container */
+  margin: auto; /* Center the container */
 }
 
-.r-head{
-  margin-bottom: 2rem;
+.r-head {
+  text-align: center; /* Center-align the text */
+  margin-bottom: 2rem; /* Space below header */
 }
-.swiper-horizontal{
-  overflow: visible;
+
+.orangeText {
+  color: #ff922d; /* Orange color for emphasis */
+  font-weight: 500;
+  font-size: 1.5rem; /* Slightly larger font */
 }
-.r-buttons{
+
+.primaryText {
+  color: #1f3e72; /* Primary text color */
+  font-weight: bold;
+  font-size: 2.5rem; /* Larger font size */
+  margin-top: 0.5rem; /* Space above title */
+}
+
+.r-buttons {
   position: absolute;
-  gap: 1rem;
-  top: -4rem;
-  right: 0;
-}
-.r-buttons button{
-  font-size: 1.2rem;
-  padding: .2rem .8rem;
-  color: blue;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-}
-.r-buttons>:nth-child(1)
-{
-  background-color: #EEEEFF;
-}
-.r-buttons>:nth-child(2)
-{
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+  top: 50%; /* Center vertically */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%); /* Adjust to center */
+  z-index: 10; /* Ensure buttons are above slider */
 }
 
+.r-prevButton,
+.r-nextButton {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Circular buttons */
+  width: 40px; /* Button width */
+  height: 40px; /* Button height */
+  display: flex;
+  justify-content: center; /* Center icon */
+  align-items: center; /* Center icon */
+  cursor: pointer; /* Pointer on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: background 0.3s, transform 0.3s; /* Smooth transition */
+}
 
-@media (max-width: 640px) {
-  .r-head{
-  align-items: center;
-  }
-  .r-buttons{
-    position: initial;
-  }
+.r-prevButton:hover,
+.r-nextButton:hover {
+  background: rgba(255, 255, 255, 1); /* Solid background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }

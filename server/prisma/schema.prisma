@@ -19,13 +19,13 @@ model User {
 
 model Residency {
     id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    title       String   @db.String
-    description String   @db.String
+    title       String
+    description String
     price       Int
-    address     String   @db.String
-    city        String   @db.String
-    country     String   @db.String
-    image       String   @db.String
+    address     String
+    city        String
+    country     String
+    image       String
     facilities  Json
     userEmail   String
     owner       User     @relation("Owner", fields: [userEmail], references: [email])

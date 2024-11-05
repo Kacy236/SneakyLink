@@ -6,7 +6,7 @@
 .h-container {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  color: var(--secondary);
+  
   justify-content: space-between;
 }
 

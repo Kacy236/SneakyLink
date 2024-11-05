@@ -14,7 +14,7 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
       title: (value) => validateString(value),
       description: (value) => validateString(value),
       price: (value) =>
-          value < 1000 ? "Must be greater than 999 dollars" : null,
+          value < 15000 ? "Must be greater than 15k naira" : null,
     },
   });
 
@@ -36,20 +36,20 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
         }}>
         <TextInput
           withAsterisk
-          label="Title"
-          placeholder="Property Name"
+          label="Name"
+          placeholder="Nickname"
           {...form.getInputProps("title")}
         />
         <Textarea
           placeholder="Description"
-          label="Description"
+          label="Tell us about yourself (Age matters most)"
           withAsterisk
           {...form.getInputProps("description")}
         />
         <NumberInput
           withAsterisk
           label="Price"
-          placeholder="1000"
+          placeholder="15000"
           min={0}
           {...form.getInputProps("price")}
         />

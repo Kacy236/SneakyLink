@@ -8,7 +8,7 @@ const InnovationComponent = () => {
         {/* Left: Car Image */}
         <div className="car-image">
           <img 
-            src="./bmw.jpg" 
+            src="image1.png" 
             alt="Blue BMW" 
           />
         </div>
@@ -17,7 +17,7 @@ const InnovationComponent = () => {
         <div className="text-content">
           <div className="icon-header">
             <img 
-              src="https://your-icon-url.com" 
+              src="./art.png" 
               alt="Icon"
               className="icon"
             />

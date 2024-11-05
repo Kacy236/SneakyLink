@@ -6,18 +6,18 @@ const Footer = () => {
       <div className="paddings innerWidth flexCenter f-container">
         {/* left side */}
         <div className="flexColStart f-left">
-          <img src="./logo2.png" alt="" width={120} />
+          <img src="./Untitled.png" alt="" width={150} />
           <span className="secondaryText">
-            Our vision is to make all people <br />
-            the best place to live for them.
+            Our vision is to give all people <br />
+            the best way to live
           </span>
         </div>
 
         <div className="flexColStart f-right">
           <span className="primaryText">Information</span>
-          <span className="secondaryText">145 New York, FL 5467, USA</span>
+          <span className="secondaryText">Umuahia, Abia State</span>
           <div className="flexCenter f-menu">
-            <span>Property</span>
+            <span>Sex</span>
             <span>Services</span>
             <span>Product</span>
             <span>About Us</span>

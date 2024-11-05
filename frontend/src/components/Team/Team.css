@@ -1,0 +1,123 @@
+/* Team Section */
+.team-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Title Styling */
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeInDown 0.6s ease;
+  }
+  
+  /* Slider */
+  .slick-slide {
+    padding: 0 15px;
+  }
+  
+  .slick-dots {
+    bottom: -30px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #ff6347; /* Change color of active dot */
+  }
+  
+  /* Team Cards */
+  .team-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team-card-inner {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .team-info {
+    margin-bottom: 20px;
+  }
+  
+  .team-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .team-role {
+    font-size: 1rem;
+    color: #ff6347;
+    margin: 10px 0;
+  }
+  
+  .team-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Social Icons */
+  .team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -8,6 +8,8 @@ import Hero2 from '../components/Hero2/Hero2';
 import Residencies from "../components/Residencies/Residencies";
 import Value from "../components/Value/Value";
 import InnovationComponent from '../components/Innovation/InnovationComponent';
+import Team from '../components/Team/Team';
+import Contact from '../components/Contact/Contact';
 
 const Website = () => {
   return (
@@ -17,11 +19,7 @@ const Website = () => {
         <Hero />
       </div>
       <Hero2/>
-      <Companies />
-      <Residencies/>
-      <Value/>
-      <InnovationComponent/>
-      <GetStarted/>
+
     </div>
 
   )

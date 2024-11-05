@@ -1,9 +1,9 @@
-import {auth} from 'express-oauth2-jwt-bearer'
+import { auth } from 'express-oauth2-jwt-bearer';
 
 const jwtCheck = auth({
-    audience: "http://localhost:8000",
-    issuerBaseURL: "https://dev-y0wvm4iw5voue3gk.us.auth0.com",
+    audience: "https://dev-yylu3bl0w0hpmiy2.uk.auth0.com/api/v2/",
+    issuerBaseURL: "https://dev-yylu3bl0w0hpmiy2.uk.auth0.com", // Add https:// here
     tokenSigningAlg: "RS256"
-})
+});
 
-export default jwtCheck
+export default jwtCheck;

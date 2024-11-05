@@ -20,11 +20,6 @@ const Facilities = ({
       parkings: propertyDetails.facilities.parkings,
       bathrooms: propertyDetails.facilities.bathrooms,
     },
-    validate: {
-      bedrooms: (value) => (value < 1 ? "Must have atleast one room" : null),
-      bathrooms: (value) =>
-        value < 1 ? "Must have atleast one bathroom" : null,
-    },
   });
 
   const { bedrooms, parkings, bathrooms } = form.values;
@@ -63,9 +58,9 @@ const Facilities = ({
         address: "",
         image: null,
         facilities: {
-          bedrooms: 0,
-          parkings: 0,
-          bathrooms: 0,
+          bedrooms: "",
+          parkings: "",
+          bathrooms: "",
         },
         userEmail: user?.email,
       })
@@ -86,19 +81,19 @@ const Facilities = ({
       >
         <NumberInput
           withAsterisk
-          label="No of Bedrooms"
-          min={0}
+          label="Age"
+          
           {...form.getInputProps("bedrooms")}
         />
         <NumberInput
-          label="No of Parkings"
-          min={0}
+          label="No of Recent Partners"
+          
           {...form.getInputProps("parkings")}
         />
         <NumberInput
           withAsterisk
-          label="No of Bathrooms"
-          min={0}
+          label="Confirm Price "
+          
           {...form.getInputProps("bathrooms")}
         />
         <Group position="center" mt="xl">

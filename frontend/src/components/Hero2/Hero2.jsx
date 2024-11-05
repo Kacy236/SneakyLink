@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Hero2.css';
 
 const images = [
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
-  'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d',
-  'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb',
-]; // Replace with actual image URLs
+  './sensor.jpg', // Local image path in public folder
+  './sex.jpg',
+  './lips.jpg',
+];  // Add more URLs for flirty images if needed
 
 const Hero2 = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -19,17 +19,20 @@ const Hero2 = () => {
 
   return (
     <div className="hero-slider-container">
+      {/* Background image changing based on currentImage index */}
       <div
         className="hero-slider-background"
         style={{ backgroundImage: `url(${images[currentImage]})` }}
       ></div>
+      
+      {/* Content overlay */}
       <div className="hero-slider-content">
-        <h1 className="hero-slider-title">Discover Luxury Properties</h1>
+        <h1 className="hero-slider-title">Grab A Condom</h1>
         <p className="hero-slider-description">
-          Experience the finest homes in the most desirable locations.
+          Meet fun people nearby, ready for something exciting.
         </p>
-        <a href="#properties" className="hero-slider-btn">
-          Explore Now
+        <a href="/properties" className="hero-slider-btn">
+          Start Exploring
         </a>
       </div>
     </div>
