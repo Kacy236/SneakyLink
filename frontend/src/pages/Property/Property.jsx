@@ -59,7 +59,7 @@ const Property = () => {
 
   // WhatsApp URL with a pre-filled message
   const whatsappMessage = `Hello, I'm interested in the property: ${data?.title} located at ${data?.address}, ${data?.city}, ${data?.country}. Can you provide more details?`;
-  const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappLink = `https://wa.link/77wka3?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="wrapper">
