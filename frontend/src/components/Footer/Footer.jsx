@@ -15,8 +15,6 @@ const Footer = () => {
 
         <div className="flexColStart f-right">
           <span className="primaryText">Information</span>
-          <span className="secondaryText">ndubuisik216@gmail.com</span>
-          <span className="secondaryText">Umuahia, Abia State</span>
           
           <div className="flexCenter f-menu">
             <span>Sex</span>
