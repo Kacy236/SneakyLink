@@ -7,13 +7,13 @@ import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Auth0Provider
-      domain={import.meta.env.VITE_AUTH0_DOMAIN}
-      clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
+      domain="https://dev-yylu3bl0w0hpmiy2.uk.auth0.com"
+      clientId="mBESRp6QbYx9sY8bJtktxHTmUo0tj6zW"
       authorizationParams={{
-        redirect_uri: import.meta.env.VITE_AUTH0_REDIRECT_URI,
+        redirect_uri: "http://localhost:5173",
       }}
-      audience={import.meta.env.VITE_AUTH0_AUDIENCE}
-      scope={import.meta.env.VITE_AUTH0_SCOPE}
+      audience="https://dev-yylu3bl0w0hpmiy2.uk.auth0.com/api/v2/"
+      scope="openid profile email"
     >
       <App />
     </Auth0Provider>
