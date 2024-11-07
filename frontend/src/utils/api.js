@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 // Initialize Axios instance with development configurations
 export const api = axios.create({
   baseURL: "https://sneaky-link-hazel.vercel.app/api",
-  timeout: 10000,
+  timeout: 30000,
 });
 
 // Universal error handler for Axios

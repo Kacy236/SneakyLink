@@ -79,16 +79,16 @@ const Property = () => {
             {/* facilities */}
             <div className="flexStart facilities">
               <div className="flexStart facility">
-                <BsClock size={20} color="#1F3E72" />
-                <span>{data?.facilities?.bathrooms} Years old</span>
+                <TbCurrencyNaira size={20} color="#1F3E72" />
+                <span>{data?.facilities?.bathrooms}</span>
               </div>
               <div className="flexStart facility">
                 <BsPeople size={20} color="#1F3E72" />
                 <span>{data?.facilities.parkings} Partners</span>
               </div>
               <div className="flexStart facility">
-                <TbCurrencyNaira size={20} color="#1F3E72" />
-                <span>{data?.facilities.bedrooms}</span>
+                <BsClock size={20} color="#1F3E72" />
+                <span>{data?.facilities.bedrooms} Years old</span>
               </div>
             </div>
 
