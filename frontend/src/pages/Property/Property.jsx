@@ -87,7 +87,7 @@ const Property = () => {
                 <span>{data?.facilities.parkings} Partners</span>
               </div>
               <div className="flexStart facility">
-                <BsClock size={20} color="#1F3E72" />
+                < BsClock size={20} color="#1F3E72" />
                 <span>{data?.facilities.bedrooms} Years old</span>
               </div>
             </div>
