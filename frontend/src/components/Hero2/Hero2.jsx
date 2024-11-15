@@ -4,7 +4,7 @@ import './Hero2.css';
 const images = [
   './sensor.jpg', // Local image path in public folder
   './sex.jpg',
-  './ass.jpg',
+  './fuck.jpg',
 ];  // Add more URLs for flirty images if needed
 
 const Hero2 = () => {
