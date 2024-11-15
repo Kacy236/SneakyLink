@@ -4,7 +4,7 @@ import './Hero2.css';
 const images = [
   './sensor.jpg', // Local image path in public folder
   './sex.jpg',
-  './lips.jpg',
+  './ass.jpg',
 ];  // Add more URLs for flirty images if needed
 
 const Hero2 = () => {
@@ -27,9 +27,9 @@ const Hero2 = () => {
       
       {/* Content overlay */}
       <div className="hero-slider-content">
-        <h1 className="hero-slider-title">Grab A Condom</h1>
+        <h1 className="hero-slider-title">Have the fun you desire</h1>
         <p className="hero-slider-description">
-          Meet fun people nearby, ready for something exciting.
+          Meet people nearby, ready for something exciting.
         </p>
         <a href="/properties" className="hero-slider-btn">
           Start Exploring

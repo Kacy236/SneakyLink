@@ -81,8 +81,8 @@ const Facilities = ({
       >
         <NumberInput
           withAsterisk
-          label="Price"
-          min={20000}
+          label="Age"
+          min={18}
           
           {...form.getInputProps("bedrooms")}
         />

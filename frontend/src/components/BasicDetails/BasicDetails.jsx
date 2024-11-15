@@ -14,7 +14,7 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
       title: (value) => validateString(value),
       description: (value) => validateString(value),
       price: (value) =>
-          value < 18 ? "Must be above the age of 18" : null,
+          value < 20000 ? "Must be greater than 20k naira" : null,
     },
   });
 
@@ -48,9 +48,9 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
         />
         <NumberInput
           withAsterisk
-          label="Age"
-          placeholder="18"
-          min={18}
+          label="Price"
+          placeholder=""
+          min={20000}
           {...form.getInputProps("price")}
         />
         <Group position="center" mt="xl">

@@ -94,7 +94,7 @@ const AnimatedText = styled.span`
 
 const HeroSection = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const phrases = ["Find Your Match", "Have the best night of your life", "Explore sexual possibilities"];
+  const phrases = ["Find Your Match", "Have the best day of your life", "Satisfy sexual starvation"];
 
   useEffect(() => {
     const interval = setInterval(() => {
