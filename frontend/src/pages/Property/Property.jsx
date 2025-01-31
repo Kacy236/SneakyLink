@@ -128,7 +128,7 @@ const Property = () => {
                   validateLogin() && setModalOpened(true);
                 }}
               >
-                Book your Visit
+                Book A Date
               </button>
             )}
 
