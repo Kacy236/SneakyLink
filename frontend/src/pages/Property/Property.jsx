@@ -57,9 +57,9 @@ const Property = () => {
     );
   }
 
-  // WhatsApp URL with a pre-filled message
-  const whatsappMessage = `Hello, I'm interested in the property: ${data?.title} located at ${data?.address}, ${data?.city}, ${data?.country}. Can you provide more details?`;
-  const whatsappLink = `https://wa.link/77wka3?text=${encodeURIComponent(whatsappMessage)}`;
+  // Telegram URL with a pre-filled message
+  const telegramMessage = `Hello, I'm interested in the property: ${data?.title} located at ${data?.address}, ${data?.city}, ${data?.country}. Can you provide more details?`;
+  const telegramLink = `https://t.me/Sneakylinksex?text=${encodeURIComponent(telegramMessage)}`;
 
   return (
     <div className="wrapper">
@@ -132,15 +132,15 @@ const Property = () => {
               </button>
             )}
 
-            {/* WhatsApp Button */}
+            {/* Telegram Button */}
             <Button
-              style={{ backgroundColor: '#25D366', color: 'white', marginTop: '1rem' }}
+              style={{ backgroundColor: '#0088cc', color: 'white', marginTop: '1rem' }}
               component="a"
-              href={whatsappLink}
+              href={telegramLink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Message on WhatsApp
+              Message on Telegram
             </Button>
 
             <BookingModal
