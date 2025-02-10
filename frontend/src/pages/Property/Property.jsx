@@ -47,7 +47,7 @@ const Property = () => {
     );
   }
 
-  if (isError) {
+  if (isError || !data) {
     return (
       <div className="wrapper">
         <div className="flexCenter paddings">
@@ -58,7 +58,7 @@ const Property = () => {
   }
 
   // Telegram URL with a pre-filled message
-  const telegramMessage = `Hello, I'm interested in the property: ${data?.title} located at ${data?.address}, ${data?.city}, ${data?.country}. Can you provide more details?`;
+  const telegramMessage = `Hello, I'm interested in the girl: ${data?.title || "Property"} located at ${data?.address || ""}, ${data?.city || ""}, ${data?.country || ""}. Can you provide more details?`;
   const telegramLink = `https://t.me/Sneakylinksex?text=${encodeURIComponent(telegramMessage)}`;
 
   return (
@@ -72,36 +72,36 @@ const Property = () => {
           <div className="flexColStart left">
             {/* head */}
             <div className="flexStart head">
-              <span className='primaryText'>{data?.title}</span>
-              <span className='orangeText' style={{ fontSize: '1.5rem' }}>₦ {data?.price}</span>
+              <span className='primaryText'>{data?.title || "Property Title"}</span>
+              <span className='orangeText' style={{ fontSize: '1.5rem' }}>₦ {data?.price || "N/A"}</span>
             </div>
 
             {/* facilities */}
             <div className="flexStart facilities">
               <div className="flexStart facility">
                 <TbCurrencyNaira size={20} color="#1F3E72" />
-                <span>{data?.facilities?.bathrooms}</span>
+                <span>{data?.facilities?.bathrooms || "N/A"}</span>
               </div>
               <div className="flexStart facility">
                 <BsPeople size={20} color="#1F3E72" />
-                <span>{data?.facilities.parkings} Partners</span>
+                <span>{data?.facilities?.parkings || "N/A"} Partners</span>
               </div>
               <div className="flexStart facility">
-                < BsClock size={20} color="#1F3E72" />
-                <span>{data?.facilities.bedrooms} Years old</span>
+                <BsClock size={20} color="#1F3E72" />
+                <span>{data?.facilities?.bedrooms || "N/A"} Years old</span>
               </div>
             </div>
 
             {/* description */}
             <span className="secondaryText" style={{ textAlign: "justify" }}>
-              {data?.description}
+              {data?.description || "No description available."}
             </span>
 
             {/* address */}
             <div className="flexStart" style={{ gap: "1rem" }}>
               <MdLocationPin size={25} />
               <span className="secondaryText">
-                {data?.address} {data?.city} {data?.country}
+                {data?.address || ""} {data?.city || ""} {data?.country || ""}
               </span>
             </div>
 
@@ -139,6 +139,7 @@ const Property = () => {
               href={telegramLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Message on Telegram"
             >
               Message on Telegram
             </Button>
